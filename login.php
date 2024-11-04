@@ -1,12 +1,13 @@
 <?php
 session_start();
-include 'db_connect.php'; // Include database connection file
+include 'db_connect.php'; // Include the database connection file
 
+// Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Check if username exists
+    // Prepare SQL statement to check if username exists
     $sql = "SELECT * FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $username);
@@ -14,10 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+        // Fetch user data
         $user = $result->fetch_assoc();
 
-        // Verify password
+        // Verify the provided password with the hashed password in the database
         if (password_verify($password, $user['password'])) {
+            // Set session variables
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
@@ -30,10 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit();
         } else {
-            echo "Incorrect password!";
+            // Incorrect password
+            $error_message = "Incorrect password!";
         }
     } else {
-        echo "User not found!";
+        // User not found
+        $error_message = "User not found!";
     }
 }
 ?>
@@ -44,11 +49,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body>
-    <div class="container">
+    <di class="container">
         <h2>Login</h2>
+
+        <!-- Display error message if login fails -->
+        <?php if (isset($error_message)): ?>
+            <p style="color: red;"><?php echo $error_message; ?></p>
+        <?php endif; ?>
+
         <form action="login.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" name="username" required>
@@ -60,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
 
         <!-- Link to Registration Page -->
+         <p> </p>
         <p>Don't have an account? <a href="register.php">Register here</a></p>
     </div>
 </body>

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($role == 'admin') {
         $input_admin_code = $_POST['admin_code'] ?? ''; // Use null coalescing operator to avoid undefined index
         if ($input_admin_code !== $admin_access_code) {
-            echo "Invalid Admin Access Code!";
+            echo "<div class='alert error'>Invalid Admin Access Code!</div>";
             exit();  // Stop the registration if the admin code is incorrect
         }
     }
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "Username already exists!";
+        echo "<div class='alert error'>Username already exists!</div>";
     } else {
         // Insert new user into the database with the selected role
         $sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
@@ -44,9 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param('sss', $username, $hashed_password, $role);
         
         if ($stmt->execute()) {
-            echo "Account created successfully! You can now <a href='login.php'>login here</a>.";
+            echo "<div class='alert success'>Account created successfully! You can now <a href='login.php'>login here</a>.</div>";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "<div class='alert error'>Error: " . $stmt->error . "</div>";
         }
     }
 }
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/register.css">
     <script>
         function toggleAdminCode() {
             var role = document.getElementById('role').value;
@@ -90,6 +90,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <input type="submit" value="Register">
         </form>
+
+        <div class="button-group">
+            <a href="login.php" class="button">Already have an account? Log in here</a>
+        </div>
     </div>
 </body>
 </html>
