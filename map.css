@@ -1,0 +1,59 @@
+body {
+    font-family: 'Lexend Exa', Arial, sans-serif; /* Ensure your font is applied */
+    background-color: #f4f4f4;
+}
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #460201; /* Update to your desired color */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.map-message {
+    font-size: 18px;
+    color: #460201; /* Text color for the message */
+    text-align: center; /* Center the message */
+    padding: 20px; /* Add padding around the message */
+}

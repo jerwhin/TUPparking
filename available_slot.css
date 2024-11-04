@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background */
+}
+
+.slots-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+h1 {
+    color: #460201; /* Dark red color */
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    background: #e7f3fe; /* Light blue background */
+    margin: 10px 0; /* Margin between slots */
+    padding: 10px; /* Padding inside each slot */
+    border-radius: 5px; /* Rounded corners for each slot */
+}

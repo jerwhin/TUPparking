@@ -1,0 +1,103 @@
+
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4; /* Light background */
+    }
+
+    .dashboard-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff; /* White background */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between; /* Space between header items */
+        align-items: center; /* Center items vertically */
+        padding: 20px 0; /* Padding for header */
+        border-bottom: 1px solid #ddd; /* Light bottom border */
+    }
+
+    header h1 {
+        margin: 0; /* No margin for the heading */
+        font-size: 26px; /* Font size for heading */
+        color: #460201; /* Dark red color for heading */
+    }
+
+    nav ul {
+        list-style-type: none; /* Remove bullet points */
+        margin: 0; /* No margin */
+        padding: 0; /* No padding */
+        display: flex; /* Flex layout for navigation */
+    }
+
+    nav ul li {
+        margin-left: 30px; /* Space between navigation items */
+    }
+
+    nav ul li a {
+        text-decoration: none; /* Remove underline */
+        color: #460201; /* Link color */
+        font-weight: bold; /* Bold text for links */
+        transition: color 0.3s ease; /* Smooth color transition */
+    }
+
+    nav ul li a:hover {
+        color: #460201; /* Change to dark red on hover */
+        text-decoration: underline; /* Underline on hover */
+    }
+
+    main {
+        margin-top: 20px; /* Margin above main content */
+    }
+
+    main h2 {
+        font-size: 24px; /* Font size for subheadings */
+        color: #333; /* Dark grey color for text */
+    }
+
+    main p {
+        font-size: 18px; /* Font size for paragraphs */
+        color: #555; /* Medium grey color */
+    }
+
+    button {
+        background-color: #460201; /* Dark red background for buttons */
+        color: white; /* White text for buttons */
+        border: none; /* No border */
+        padding: 10px 15px; /* Padding inside buttons */
+        border-radius: 5px; /* Rounded corners for buttons */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+    }
+
+    button:hover {
+        background-color: #370101; /* Darker shade on hover */
+    }
+
+    .table {
+        width: 100%; /* Full width for the table */
+        border-collapse: collapse; /* Merge borders */
+        margin-top: 20px; /* Space above the table */
+    }
+
+    .table th, .table td {
+        padding: 10px; /* Padding inside table cells */
+        text-align: left; /* Left alignment for text */
+        border-bottom: 1px solid #ddd; /* Light bottom border */
+    }
+
+    .table th {
+        background-color: #460201; /* Dark red background for table headers */
+        color: white; /* White text for table headers */
+    }
+
+    .table tr:hover {
+        background-color: #f5f5f5; /* Light grey background on row hover */
+    }

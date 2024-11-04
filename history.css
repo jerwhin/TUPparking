@@ -1,0 +1,116 @@
+/* Import Lexend Exa font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@400&display=swap');
+
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Exa', Arial, sans-serif; /* Updated font */
+    background-color: #f4f4f4; /* Light background color */
+}
+
+/* Common styles for containers */
+.common-container {
+    max-width: 900px; /* Max width for the container */
+    margin: 20px auto; /* Center the container with margin */
+    padding: 20px;
+    background: #ffffff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Header styles */
+header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    border-bottom: 2px solid #460201; /* Bottom border */
+    padding-bottom: 10px; /* Padding below header */
+}
+
+h1 {
+    font-size: 28px; /* Larger font size for title */
+    color: #460201; /* Dark red color for the title */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for navigation */
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between navigation items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #460201; /* Link color */
+    font-weight: bold; /* Bold links */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Merge borders */
+    margin-top: 20px; /* Space above the table */
+}
+
+th, td {
+    padding: 12px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Bottom border for rows */
+}
+
+th {
+    background-color: #460201; /* Header background color */
+    color: white; /* Header text color */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light grey background on row hover */
+}
+
+/* Button Styles */
+.button-group {
+    margin-top: 20px; /* Space above button group */
+}
+
+.button {
+    display: inline-block; /* Inline block for buttons */
+    background-color: #460201; /* Dark red background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for buttons */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition for background color */
+    font-weight: bold; /* Bold text for buttons */
+}
+
+.button:hover {
+    background-color: #5a2023; /* Darker red on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        align-items: flex-start; /* Align left */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Space below each nav item */
+    }
+
+    .common-container {
+        width: 90%; /* Full width on small screens */
+    }
+}
